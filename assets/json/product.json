@@ -1,0 +1,66 @@
+{
+    "status" : "success",
+    "message" : "sukses menampilkan data",
+    "data" : [
+        {
+            "id" : 1,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-E58B_1024x1024.jpg?v=1654508784",
+            "nama_produk" : "Psycho",
+            "harga" : 200
+        },
+        {
+            "id" : 2,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-D53B_1024x1024.jpg?v=1650865161",
+            "nama_produk" : "Flamingo",
+            "harga" : 230
+        },
+        {
+            "id" : 3,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-C48B_1024x1024.jpg?v=1650860153",
+            "nama_produk" : "Dean",
+            "harga" : 175
+        },
+        {
+            "id" : 4,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-D57B_1024x1024.jpg?v=1654508401",
+            "nama_produk" : "Xerox",
+            "harga" : 220
+        },
+        {
+            "id" : 5,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-D55B_1024x1024.jpg?v=1654508125",
+            "nama_produk" : "Cloud Head",
+            "harga" : 190
+        },
+        {
+            "id" : 6,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-B25B_1024x1024.jpg?v=1650254244",
+            "nama_produk" : "The Wave",
+            "harga" : 200
+        },
+        {
+            "id" : 7,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-C28B_1024x1024.jpg?v=1650254573",
+            "nama_produk" : "The Marine",
+            "harga" : 198
+        },
+        {
+            "id" : 8,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/IMG-20220407-WA0006_1024x1024.jpg?v=1649304643",
+            "nama_produk" : "Romanov",
+            "harga" : 210
+        },
+        {
+            "id" : 9,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-B17B_1024x1024.jpg?v=1649237010",
+            "nama_produk" : "Lamplighter",
+            "harga" : 193
+        },
+        {
+            "id" : 10,
+            "gambar" : "https://cdn.shopify.com/s/files/1/1365/9261/products/FN-TSRT-D52B_1024x1024.jpg?v=1654507665",
+            "nama_produk" : "Meadow",
+            "harga" : 230
+        }
+    ]
+}
