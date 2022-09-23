@@ -67,12 +67,30 @@ class _DetailScreenState extends State<DetailScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(right: 100))
+                   Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.black),
+                      width: 70,
+                      height: 60,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.more_vert,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        ],
+                      )),
                 ],
               ),
             ),
             Container(
                 height: 500,
+                margin: EdgeInsets.only(top: 10),
                 width: MediaQuery.of(context).size.width * 1,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(35),
@@ -84,8 +102,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   children: [],
                 )),
             Container(
-              margin: EdgeInsets.only(top: 10),
-              height: 400,
+              margin: EdgeInsets.only(top: 15),
+              height: 405,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,9 +119,9 @@ class _DetailScreenState extends State<DetailScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Icon(
-                        Icons.bookmark_add_outlined,
-                        size: 50,
+                      Text(
+                        "Stock ${widget.data.id}",
+                        style: TextStyle(fontSize: 35, color: Colors.black38),
                       ),
                     ],
                   ),
@@ -123,6 +141,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w300,
+                          color: Colors.black38
                         ),
                       )
                     ],
@@ -214,7 +233,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ),
                       Container(
-                        height: 90,
+                        height: 80,
                         width: MediaQuery.of(context).size.width * 0.70,
                         decoration: BoxDecoration(
                             color: Colors.black,

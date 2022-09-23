@@ -82,7 +82,8 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                   )),
                               onSubmitted: (value) {
-                                Navigator.pushReplacementNamed(context, '/searchPage',
+                                Navigator.pushReplacementNamed(
+                                    context, '/searchPage',
                                     arguments: search.text);
                               },
                             )),
@@ -187,7 +188,8 @@ Widget Card(context, Products data) {
     children: [
       InkWell(
         onTap: () {
-          Navigator.pushReplacementNamed(context, '/DetailScreen', arguments: data);
+          Navigator.pushReplacementNamed(context, '/DetailScreen',
+              arguments: data);
         },
         child: Container(
           width: 270,
@@ -209,12 +211,12 @@ Widget Card(context, Products data) {
                           Colors.black.withOpacity(0.2), BlendMode.screen)),
                 ),
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         data.namaProduk.toUpperCase(),
@@ -225,11 +227,18 @@ Widget Card(context, Products data) {
                         textAlign: TextAlign.start,
                       ),
                       Text(
-                        'Rp${data.harga}K'.toUpperCase(),
-                        style: TextStyle(fontSize: 25),
+                        "Stock ${data.id}",
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
                         textAlign: TextAlign.start,
                       ),
                     ],
+                  ),
+                  Text(
+                    'Rp${data.harga}K',
+                    style: TextStyle(fontSize: 25),
+                    textAlign: TextAlign.start,
                   ),
                 ],
               ),

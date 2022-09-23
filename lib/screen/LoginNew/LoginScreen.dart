@@ -38,12 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
           if (dataFilter.isNotEmpty) {
             // lakukan navigation ke home
             Navigator.pushReplacementNamed(context, '/MainScreen');
-          } else {
-            //alert error
-          }
-        } else {
-          //alert error
-        }
+          } else {}
+        } else {}
       });
     });
   }
