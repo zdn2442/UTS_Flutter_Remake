@@ -61,14 +61,14 @@ class _MainScreenState extends State<MainScreen> {
                       children: [
                         Container(
                             margin: EdgeInsets.only(bottom: 10, top: 15),
-                            width: MediaQuery.of(context).size.width * 0.70,
+                            width: MediaQuery.of(context).size.width * 0.5,
                             child: TextField(
                               controller: search,
                               style: TextStyle(fontSize: 20),
                               decoration: InputDecoration(
                                   isDense: true, // Added this
                                   contentPadding: EdgeInsets.symmetric(
-                                      vertical: 30, horizontal: 20),
+                                      vertical: 30, horizontal: 0),
                                   hintText: "Search Here!",
                                   prefixIcon: Icon(
                                     Icons.search,
@@ -89,7 +89,7 @@ class _MainScreenState extends State<MainScreen> {
                             )),
                         Container(
                           margin: EdgeInsets.only(top: 10, bottom: 10),
-                          width: MediaQuery.of(context).size.width * 0.20,
+                          width: MediaQuery.of(context).size.width * 0.24,
                           height: 60,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(35),
@@ -169,11 +169,17 @@ class _MainScreenState extends State<MainScreen> {
                       ],
                     ),
                   ),
-                  Wrap(
-                    spacing: MediaQuery.of(context).size.width * 0.05,
-                    children: List.generate(dataProducts.length, (index) {
-                      return Card(context, dataProducts[index]);
-                    }),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    // mainAxisAlignment: MainAxisAlignment
+                    children: [
+                      Wrap(
+                        spacing: MediaQuery.of(context).size.width * 0.02,
+                        children: List.generate(dataProducts.length, (index) {
+                          return Card(context, dataProducts[index]);
+                        }),
+                      ),
+                    ],
                   )
                 ],
               ),
@@ -192,14 +198,14 @@ Widget Card(context, Products data) {
               arguments: data);
         },
         child: Container(
-          width: 270,
-          height: 380,
+          width: 220,
+          height: 330,
           child: Column(
             children: [
               Container(
                 margin: EdgeInsets.only(top: 20, bottom: 10),
-                width: 270,
-                height: 300,
+                width: 260,
+                height: 250,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
@@ -213,31 +219,19 @@ Widget Card(context, Products data) {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        data.namaProduk.toUpperCase(),
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.start,
-                      ),
-                      Text(
-                        "Stock ${data.id}",
-                        style: TextStyle(
-                          fontSize: 25,
-                        ),
-                        textAlign: TextAlign.start,
-                      ),
-                    ],
+                  Text(
+                    data.namaProduk.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.start,
                   ),
                   Text(
                     'Rp${data.harga}K',
-                    style: TextStyle(fontSize: 25),
+                    style: TextStyle(fontSize: 23),
                     textAlign: TextAlign.start,
                   ),
                 ],

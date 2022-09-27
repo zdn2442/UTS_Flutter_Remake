@@ -34,11 +34,11 @@ class TQ extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                Navigator.pop(context);
+                                Navigator.pushReplacementNamed(context, "/");
                               },
                               child: Text(
-                                textAlign: TextAlign.center,
                                 "Kembali",
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 25),
                               ),

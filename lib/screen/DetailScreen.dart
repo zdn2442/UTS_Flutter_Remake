@@ -67,7 +67,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   Container(
+                  Container(
                       margin: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -139,10 +139,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       Text(
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                         style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.black38
-                        ),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black38),
                       )
                     ],
                   ),
@@ -158,18 +157,24 @@ class _DetailScreenState extends State<DetailScreen> {
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
                       ),
-                      Container(
-                        height: 70,
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(15)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            TextButton(
+                      Row(
+                        children: [
+                          Container(
+                            width: 80,
+                            height: MediaQuery.of(context).size.width * 0.15,
+                            decoration: BoxDecoration(
+                                color: _count == 0 ? Colors.grey : Colors.black,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    bottomLeft: Radius.circular(15))),
+                            child: TextButton(
                               onPressed: () {
                                 _decrementCount();
+                                if (_count <= 0) {
+                                  setState(() {
+                                    _count = 0;
+                                  });
+                                }
                               },
                               child: Text(
                                 "-",
@@ -178,35 +183,53 @@ class _DetailScreenState extends State<DetailScreen> {
                                     color: Colors.white, fontSize: 40),
                               ),
                             ),
-                            Container(
-                              width: 80,
-                              height: MediaQuery.of(context).size.width * 1,
-                              decoration: BoxDecoration(color: Colors.white),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "${_count}",
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: 80,
+                                height:
+                                    MediaQuery.of(context).size.width * 0.15,
+                                decoration: BoxDecoration(color: Colors.white),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "${_count}",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 40),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 80,
+                                height:
+                                    MediaQuery.of(context).size.width * 0.15,
+                                decoration: BoxDecoration(
+                                    color: _count == 0
+                                        ? Colors.grey
+                                        : Colors.black,
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(15),
+                                        bottomRight: Radius.circular(15))),
+                                child: TextButton(
+                                  onPressed: () {
+                                    _incrementCount();
+                                  },
+                                  child: Text(
+                                    "+",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 40),
+                                        color: Colors.white, fontSize: 40),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                _incrementCount();
-                              },
-                              child: Text(
-                                "+",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 40),
-                              ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -234,7 +257,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                       Container(
                         height: 80,
-                        width: MediaQuery.of(context).size.width * 0.70,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         decoration: BoxDecoration(
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(15)),
@@ -246,8 +269,8 @@ class _DetailScreenState extends State<DetailScreen> {
                                 Navigator.pushReplacementNamed(context, "/TQ");
                               },
                               child: Text(
-                                textAlign: TextAlign.center,
                                 "CheckOut",
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 40),
                               ),
